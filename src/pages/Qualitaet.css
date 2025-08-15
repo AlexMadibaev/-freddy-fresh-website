@@ -1,0 +1,183 @@
+.qualitaet-page {
+  min-height: 100vh;
+  background: #f5f5f5;
+}
+
+/* Hero секция с изображением */
+.qualitaet-hero {
+  height: 60vh;
+  background: #f5f5f5;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-bg-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* Основной контент */
+.qualitaet-content {
+  padding: 3rem 0;
+  background: #f5f5f5;
+}
+
+.qualitaet-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  padding: 0 2rem;
+}
+
+/* Левая колонка - контактная информация */
+.contact-section h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #000000;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0 0 1.5rem 0;
+  text-align: left;
+}
+
+.contact-details {
+  margin-bottom: 1.5rem;
+}
+
+.contact-details p {
+  font-size: 0.9rem;
+  color: #000000;
+  line-height: 1.5;
+  margin: 0 0 0.3rem 0;
+  text-align: left;
+}
+
+.contact-info p {
+  font-size: 0.9rem;
+  color: #000000;
+  margin: 0 0 0.5rem 0;
+  text-align: left;
+}
+
+.contact-info a {
+  color: #DC0D15;
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.contact-info a:hover {
+  color: #b30a11;
+}
+
+/* Правая колонка - информация о качестве */
+.quality-section h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #000000;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0 0 1.5rem 0;
+  text-align: left;
+}
+
+.quality-text p {
+  font-size: 0.95rem;
+  color: #000000;
+  line-height: 1.6;
+  margin: 0 0 1rem 0;
+  text-align: left;
+}
+
+/* Брендинг элемент */
+.branding-element {
+  text-align: center;
+  padding: 2rem 0;
+  background: white;
+}
+
+.red-star {
+  font-size: 3rem;
+  color: #DC0D15;
+  margin-bottom: 1rem;
+}
+
+.branding-element h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #000000;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+/* Призыв к действию */
+.cta-section {
+  text-align: center;
+  padding: 2rem 0;
+  background: #f5f5f5;
+}
+
+.cta-section h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #DC0D15;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .qualitaet-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 0 1rem;
+  }
+  
+  .hero-image {
+    height: 50vh;
+  }
+  
+  .branding-element h3 {
+    font-size: 1.5rem;
+  }
+  
+  .cta-section h2 {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .qualitaet-container {
+    padding: 0 0.5rem;
+  }
+  
+  .hero-image {
+    height: 40vh;
+  }
+  
+  .contact-section h2,
+  .quality-section h2 {
+    font-size: 1.3rem;
+  }
+  
+  .branding-element h3 {
+    font-size: 1.3rem;
+  }
+  
+  .cta-section h2 {
+    font-size: 1.1rem;
+  }
+}

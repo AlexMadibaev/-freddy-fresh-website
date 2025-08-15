@@ -1,0 +1,99 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+  color: #333;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Общий стиль для ВСЕХ кнопок на сайте */
+.btn, 
+.order-btn, 
+.franchise-btn, 
+.promo-cta-btn,
+.submit-btn,
+.auth-btn,
+.cookie-actions .btn,
+.cookie-actions .btn-primary,
+.cookie-actions .btn-secondary,
+.success-content .btn {
+  display: inline-block;
+  background: #DC0D15;
+  color: white;
+  padding: 1.2rem 2.5rem;
+  border-radius: 0;
+  text-decoration: none;
+  font-weight: 900;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+  outline: none;
+  position: relative;
+  z-index: 2;
+}
+
+.btn:hover, 
+.order-btn:hover, 
+.franchise-btn:hover, 
+.promo-cta-btn:hover,
+.submit-btn:hover,
+.auth-btn:hover,
+.cookie-actions .btn:hover,
+.cookie-actions .btn-primary:hover,
+.cookie-actions .btn-secondary:hover,
+.success-content .btn:hover {
+  background: #b30a11;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(220, 13, 21, 0.3);
+}
+
+/* Специальные стили для вторичных кнопок */
+.btn-secondary,
+.cookie-actions .btn-secondary {
+  background: #f8f9fa;
+  color: #333;
+  border: 1px solid #dee2e6;
+}
+
+.btn-secondary:hover,
+.cookie-actions .btn-secondary:hover {
+  background: #e9ecef;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Стили для отключенных кнопок */
+.btn:disabled,
+.order-btn:disabled,
+.franchise-btn:disabled,
+.promo-cta-btn:disabled,
+.submit-btn:disabled,
+.auth-btn:disabled {
+  background: #6c757d;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}

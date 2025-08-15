@@ -1,0 +1,364 @@
+.header {
+  background: #DC0D15;
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 2rem;
+  height: 100%;
+}
+
+/* Логотип слева - иконка меню */
+.header-logo-left {
+  flex: 0 0 auto;
+}
+
+.menu-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.menu-icon {
+  width: 35px;
+  height: 35px;
+  transition: all 0.3s ease;
+  filter: brightness(0) invert(1); /* Делаем иконку белой */
+}
+
+.menu-toggle:hover .menu-icon {
+  filter: brightness(0) invert(0.3); /* Темно-красный при hover */
+}
+
+.menu-toggle.active .menu-icon {
+  filter: brightness(0) invert(1); /* Белый крестик */
+  transform: rotate(45deg);
+}
+
+.menu-toggle.active .menu-icon::after {
+  content: '';
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  background: white;
+  clip-path: polygon(45% 0%, 55% 0%, 55% 45%, 100% 45%, 100% 55%, 55% 55%, 55% 100%, 45% 100%, 45% 55%, 0% 55%, 0% 45%, 45% 45%);
+}
+
+.logo-image {
+  height: 50px;
+  width: auto;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.logo-image:hover {
+  opacity: 0.8;
+}
+
+
+
+/* Центральный логотип */
+.header-logo-center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.main-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: white;
+  font-weight: 800;
+  font-size: 1.6rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.logo-text {
+  font-family: 'Inter', sans-serif;
+  font-weight: 900;
+}
+
+.logo-star {
+  font-size: 1.8rem;
+  color: white;
+  margin: 0 0.5rem;
+}
+
+/* Правая часть - иконки */
+.header-actions {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.profile-icon {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+}
+
+.profile-circle {
+  width: 25px;
+  height: 25px;
+  border: 2px solid white;
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-silhouette {
+  width: 12px;
+  height: 12px;
+  background: white;
+  border-radius: 50%;
+  position: relative;
+}
+
+.profile-silhouette::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 16px;
+  height: 8px;
+  background: white;
+  border-radius: 8px 8px 0 0;
+}
+
+.hamburger-menu {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 40px;
+  gap: 4px;
+  position: relative;
+  overflow: visible;
+}
+
+.hamburger-line {
+  width: 20px;
+  height: 2px;
+  background: white;
+  border-radius: 1px;
+  transition: all 0.3s ease;
+}
+
+.hamburger-menu:hover .hamburger-line {
+  background: #b30a11; /* Темно-красный при hover */
+}
+
+/* Анимация для крестика */
+.hamburger-menu.active .hamburger-line:nth-child(1) {
+  transform: rotate(45deg) translate(10px, 10px);
+}
+
+.hamburger-menu.active .hamburger-line:nth-child(2) {
+  opacity: 0;
+  transform: translateX(-20px);
+}
+
+.hamburger-menu.active .hamburger-line:nth-child(3) {
+  transform: rotate(-45deg) translate(10px, -10px);
+}
+
+/* Мобильное меню */
+.mobile-nav {
+  position: fixed;
+  top: 70px;
+  right: -300px;
+  width: 300px;
+  height: calc(100vh - 70px);
+  background: white;
+  transition: right 0.3s ease;
+  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+}
+
+.mobile-nav.open {
+  right: 0;
+}
+
+.mobile-nav-content {
+  padding: 2rem;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.mobile-nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mobile-nav-list li {
+  margin-bottom: 1rem;
+}
+
+.mobile-nav-link {
+  display: block;
+  color: #333;
+  text-decoration: none;
+  font-weight: 900;
+  font-size: 1.1rem;
+  padding: 0,5rem 0;
+  border-bottom: 0px solid #eee;
+  transition: color 0.3s ease;
+}
+
+.mobile-nav-link:hover {
+  color: #DC0D15;
+}
+
+.dropdown-toggle {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mobile-dropdown {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.mobile-dropdown.show {
+  max-height: 300px;
+}
+
+.mobile-dropdown li {
+  margin: 0;
+  padding-left: 1rem;
+}
+
+.mobile-dropdown a {
+  color: #333;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 900;
+  padding: 0.5rem 0;
+  display: block;
+  border-bottom: none;
+}
+
+.mobile-dropdown a:hover {
+  color: #DC0D15;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .header-content {
+    padding: 0 1rem;
+  }
+  
+  .main-logo {
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+  }
+  
+  .logo-star {
+    font-size: 1.5rem;
+  }
+  
+  .plate-icon {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .plate-circle {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .profile-icon,
+  .hamburger-menu {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .profile-circle {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .profile-silhouette {
+    width: 10px;
+    height: 10px;
+  }
+  
+  .profile-silhouette::after {
+    width: 14px;
+    height: 6px;
+    bottom: -6px;
+  }
+  
+  .hamburger-line {
+    width: 18px;
+    height: 2px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    height: 60px;
+  }
+  
+  .mobile-nav {
+    top: 60px;
+    width: 280px;
+    height: calc(100vh - 60px);
+  }
+  
+  .main-logo {
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+  }
+  
+  .logo-star {
+    font-size: 1.3rem;
+  }
+  
+  .header-actions {
+    gap: 1rem;
+  }
+}

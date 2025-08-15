@@ -1,0 +1,1141 @@
+.home {
+  overflow-x: hidden;
+  padding-top: 70px; /* Отступ для фиксированного хедера */
+}
+
+/* Hero Banner */
+.hero-banner {
+  position: relative;
+  height: calc(100vh - 70px);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.banner-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+.banner-background img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* Fallback для случая, если изображение не загружается */
+.banner-fallback {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #DC0D15 0%, #ff4757 50%, #DC0D15 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.banner-fallback::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+  animation: float 20s ease-in-out infinite;
+}
+
+.fallback-content {
+  text-align: center;
+  color: white;
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  padding: 2rem;
+}
+
+.fallback-content h1 {
+  font-size: 3.5rem;
+  font-weight: 900;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  letter-spacing: 1px;
+}
+
+.fallback-content p {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 2.5rem;
+  opacity: 0.95;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.banner-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 0;
+  width: 100%;
+}
+
+.banner-left {
+  color: white;
+  max-width: 1200px;
+}
+
+.banner-text {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 2rem;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.banner-title {
+  font-size: 3.5rem;
+  font-weight: 900;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  letter-spacing: 1px;
+}
+
+.banner-subtitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 2.5rem;
+  opacity: 0.95;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.banner-cta {
+  display: inline-block;
+  background: #DC0D15;
+  color: white;
+  padding: 1.5rem 3rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.banner-cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.banner-cta:hover::before {
+  left: 100%;
+}
+
+.banner-cta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(0,0,0,0.4);
+  background: #b30a11;
+}
+
+.banner-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner-image {
+  position: relative;
+  width: 400px;
+  height: 400px;
+}
+
+.pizza-visual {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pizza-base {
+  width: 300px;
+  height: 300px;
+  background: linear-gradient(135deg, #f39c12 0%, #e67e22 50%, #d35400 100%);
+  border-radius: 50%;
+  position: relative;
+  box-shadow: 
+    0 20px 40px rgba(0,0,0,0.3),
+    inset 0 10px 20px rgba(255,255,255,0.2);
+  animation: rotate 60s linear infinite;
+}
+
+.pizza-base::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+  border-radius: 50%;
+  opacity: 0.8;
+}
+
+.pizza-toppings {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.topping {
+  position: absolute;
+  border-radius: 50%;
+  animation: float 3s ease-in-out infinite;
+}
+
+.meatball {
+  width: 20px;
+  height: 20px;
+  background: #8B4513;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.meatball:nth-child(1) {
+  top: 30%;
+  left: 25%;
+  animation-delay: 0s;
+}
+
+.meatball:nth-child(2) {
+  top: 60%;
+  left: 70%;
+  animation-delay: 0.5s;
+}
+
+.meatball:nth-child(3) {
+  top: 45%;
+  left: 45%;
+  animation-delay: 1s;
+}
+
+.cheese {
+  width: 15px;
+  height: 15px;
+  background: #FFD700;
+  opacity: 0.8;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+.cheese:nth-child(4) {
+  top: 20%;
+  left: 60%;
+  animation-delay: 0.3s;
+}
+
+.cheese:nth-child(5) {
+  top: 70%;
+  left: 30%;
+  animation-delay: 0.8s;
+}
+
+.basil {
+  width: 12px;
+  height: 12px;
+  background: #228B22;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+.basil:nth-child(6) {
+  top: 25%;
+  left: 40%;
+  animation-delay: 0.2s;
+}
+
+.basil:nth-child(7) {
+  top: 55%;
+  left: 55%;
+  animation-delay: 0.7s;
+}
+
+/* Анимации */
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Адаптивность для баннера */
+@media (max-width: 1200px) {
+  .banner-content {
+    padding: 3rem 0;
+  }
+  
+  .banner-title {
+    font-size: 3rem;
+  }
+  
+  .banner-text {
+    max-width: 100%;
+  }
+  
+  .banner-image {
+    width: 350px;
+    height: 350px;
+  }
+  
+  .pizza-base {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-banner {
+    min-height: 500px;
+  }
+  
+  .banner-content {
+    padding: 2rem 0;
+  }
+  
+  .banner-title {
+    font-size: 2.5rem;
+  }
+  
+  .banner-subtitle {
+    font-size: 1.2rem;
+  }
+  
+  .banner-cta {
+    padding: 1.2rem 2.5rem;
+    font-size: 1rem;
+  }
+  
+  .banner-text {
+  padding: 1.5rem;
+  }
+  
+  .banner-image {
+    width: 280px;
+    height: 280px;
+  }
+  
+  .pizza-base {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .banner-title {
+    font-size: 2rem;
+  }
+  
+  .banner-subtitle {
+    font-size: 1rem;
+  }
+  
+  .banner-text {
+    padding: 1rem;
+  }
+  
+  .banner-image {
+    width: 220px;
+    height: 220px;
+  }
+  
+  .pizza-base {
+    width: 160px;
+    height: 160px;
+  }
+}
+
+/* Promo Grid */
+.promo-grid {
+  padding: 4rem 0;
+  background: #f5f5f5;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0;
+  position: relative;
+  z-index: 2;
+}
+
+/* Promo Header */
+.promo-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.promo-banner {
+  background: #ffffff;
+  padding: 1rem 3rem;
+  border-radius: 0;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  width: 100%;
+  max-width: 1200px;
+  position: relative;
+}
+
+.promo-banner::before,
+.promo-banner::after {
+  content: '';
+  height: 2px;
+  background: #C8001F;
+  flex: 1;
+  max-width: 1200px;
+  align-self: center;
+}
+
+/* Стили для promo-cta-btn теперь наследуются от общих стилей кнопок */
+
+/* Promo Items Grid */
+.promo-items {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.promo-item {
+  border-radius: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  height: auto;
+  min-height: 400px;
+}
+
+.promo-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.promo-image {
+  width: 100%;
+  height: auto;
+  position: relative;
+  overflow: hidden;
+  border-radius: 0;
+  min-height: 400px;
+}
+
+/* Promo Images */
+.promo-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+  min-height: 400px;
+  object-fit: cover;
+}
+
+.promo-item:hover .promo-img {
+  transform: scale(1.05);
+}
+
+/* Promo Content - Overlay on image */
+.promo-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background: transparent;
+  z-index: 2;
+  text-align: center;
+}
+
+.promo-content h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  line-height: 1.2;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+.promo-subtitle {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  line-height: 1.2;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+.promo-description {
+  color: #ffffff;
+  font-size: 1rem;
+  line-height: 1.2;
+  margin: 0;
+  font-weight: 500;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+/* Адаптивность */
+@media (max-width: 1024px) {
+  .promo-items {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 1200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .promo-items {
+    grid-template-columns: 1fr;
+    max-width: 1200px;
+  }
+  
+  .promo-content {
+    padding: 1rem;
+  }
+  
+  .promo-content h3 {
+    font-size: 1rem;
+  }
+  
+  .promo-subtitle {
+    font-size: 0.9rem;
+  }
+  
+  .promo-description {
+    font-size: 0.7rem;
+  }
+  
+  .promo-cta-btn {
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+  }
+}
+
+/* Pizza Delivery Section */
+.pizza-delivery {
+  padding: 3rem 0;
+  background: #ffffff;
+}
+
+.pizza-delivery .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.pizza-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.pizza-title {
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: #333333;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.pizza-subtitle {
+  font-size: 1.1rem;
+  color: #333333;
+  font-weight: 400;
+  margin: 0;
+}
+
+/* Reasons Section */
+.reasons-section {
+  margin-bottom: 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+}
+
+.reasons-title {
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: #DC0D15;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 2rem;
+  line-height: 1.3;
+  text-align: center;
+}
+
+.reasons-grid {
+  display: block;
+}
+
+.reason-item {
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+  border: none;
+  position: relative;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.reason-number {
+  display: inline-block;
+  background: #DC0D15;
+  color: white;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 30px;
+  font-weight: 900;
+  font-size: 1rem;
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+}
+
+.reason-item h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #DC0D15;
+  margin: 0 0 0.5rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.reason-item p {
+  font-size: 0.95rem;
+  color: #333333;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.reason-content {
+  flex: 1;
+}
+
+/* Menu and Locations Section */
+.menu-locations {
+  padding: 3rem 0; 
+  background: #f5f5f5;
+}
+
+.menu-locations .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+}
+
+.menu-locations-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.menu-section {
+  margin-bottom: 4rem;
+  background: #f5f5f5;
+  scroll-margin-top: 100px;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.locations-section {
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.section-title {
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: #DC0D15;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0 0 1.5rem 0;
+  line-height: 1.3;
+}
+
+.section-description {
+  font-size: 0.95rem;
+  color: #333333;
+  line-height: 1.6;
+  margin: 0 0 1rem 0;
+  text-align: left;
+}
+
+.highlight {
+  color: #DC0D15;
+  font-weight: 700;
+}
+
+.locations-list {
+  margin: 0;
+}
+
+.locations-list p {
+  font-size: 0.85rem;
+  color: #333333;
+  line-height: 1.5;
+  margin: 0;
+  column-count: 2;
+  column-gap: 2rem;
+}
+
+.locations-intro {
+  color: #DC0D15;
+  font-size: 0.9rem;
+  margin: 0 0 0.5rem 0;
+  font-weight: 500;
+}
+
+.cities-text {
+  color: #DC0D15;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  margin: 0;
+  column-count: 1;
+  text-align: left;
+}
+
+.cities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.city-link {
+  color: #DC0D15;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  padding: 0.3rem 0;
+  display: block;
+}
+
+.city-link:hover {
+  color: #b30a11;
+  text-decoration: underline;
+  transform: translateX(5px);
+}
+
+/* Additional Services Section */
+.additional-services {
+  padding: 3rem 0;
+  background: #ffffff;
+  text-align: left;
+}
+
+.additional-services .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.additional-services .section-title {
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: #DC0D15;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0 0 1.5rem 0;
+  line-height: 1.3;
+  text-align: left;
+  max-width: 1200px;
+}
+
+.additional-services .order-btn {
+  border-radius: 0 !important;
+}
+
+.additional-services .section-description {
+  font-size: 0.95rem;
+  color: #333333;
+  line-height: 1.6;
+  margin: 0 0 1.5rem 0;
+  text-align: left;
+  max-width: 1200px;
+}
+
+.additional-services .section-description strong {
+  color: #333333;
+  font-weight: 700;
+}
+
+.additional-services .section-description .highlight {
+  color: #DC0D15;
+  font-weight: 700;
+}
+
+.services-subtitle {
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: #333333;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 2rem 0 1rem 0;
+  line-height: 1.3;
+  text-align: left;
+  max-width: 1200px;
+}
+
+
+
+.order-button-container {
+  text-align: center;
+  margin: 2rem auto 0 auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.order-button-container::before,
+.order-button-container::after {
+  content: '';
+  height: 2px;
+  background: #DC0D15;
+  flex: 1;
+}
+
+/* Стили для order-btn теперь наследуются от общих стилей кнопок */
+
+/* Burger Section */
+.burger-section {
+  padding: 3rem 0;
+  background: #f5f5f5;
+  width: 100%;
+}
+
+.burger-section .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.burger-title {
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: #DC0D15;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: left;
+  margin: 0 0 1.5rem 0;
+  line-height: 1.3;
+  max-width: 1200px;
+}
+
+.burger-description {
+  font-size: 1rem;
+  color: #333333;
+  line-height: 1.6;
+  text-align: left;
+  margin: 0 0 2rem 0;
+  max-width: 1200px;
+}
+
+.burger-service-title {
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: #333333;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0 0 1.5rem 0;
+  line-height: 1.3;
+  text-align: left;
+  max-width: 1200px;
+}
+
+.burger-service-description {
+  font-size: 1rem;
+  color: #333333;
+  line-height: 1.6;
+  margin: 0 0 1.5rem 0;
+  text-align: left;
+  max-width: 1200px;
+}
+
+/* Стили для кнопки в блоке бургеров */
+.burger-section .order-button-container {
+  text-align: center;
+  margin: 2rem auto 0 auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 1200px;
+  width: 100%;
+}
+
+
+
+.burger-section .order-button-container::before,
+.burger-section .order-button-container::after {
+  content: '';
+  height: 2px;
+  background: #DC0D15;
+  flex: 1;
+}
+
+.burger-section .order-btn {
+  border-radius: 0 !important;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .pizza-title {
+    font-size: 2rem;
+  }
+  
+  .reasons-title,
+  .burger-title {
+    font-size: 1.5rem;
+  }
+  
+  .menu-locations-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .locations-section,
+  .burger-service {
+    padding: 2rem;
+  }
+  
+  .reasons-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .order-btn {
+    padding: 1.2rem 2.5rem;
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .pizza-delivery,
+  .menu-locations,
+  .additional-services,
+  .burger-section {
+    padding: 2rem 0;
+  }
+  
+  .pizza-title {
+    font-size: 1.8rem;
+  }
+  
+  .reasons-title,
+  .burger-title {
+    font-size: 1.3rem;
+  }
+  
+  .section-title,
+  .burger-service-title {
+    font-size: 1.4rem;
+  }
+  
+  .locations-section,
+  .burger-service {
+    padding: 1.5rem;
+  }
+  
+  .order-btn {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+  }
+}
+
+/* Franchise Section */
+.franchise-section {
+  padding: 0;
+  background: #000000;
+  position: relative;
+  overflow: hidden;
+}
+
+.franchise-banner {
+  width: 100%;
+  height: 400px;
+  background: #000000;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.franchise-bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('/franchise_banner_bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 1;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+}
+
+.franchise-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, 
+    #000000 0%, 
+    transparent 15%, 
+    transparent 85%, 
+    #000000 100%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.franchise-content {
+  text-align: center;
+  color: white;
+  position: relative;
+  z-index: 3;
+  max-width: 1200px;
+  padding: 2rem 0;
+  }
+  
+  .franchise-title {
+  font-size: 2.2rem;
+  font-weight: 900;
+  margin-bottom: 0.8rem;
+  line-height: 1.2;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: none;
+  color: #ffffff;
+}
+
+.franchise-subtitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #DC0D15;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-shadow: none;
+}
+
+/* Стили для franchise-btn теперь наследуются от общих стилей кнопок */
+
+/* Адаптивность для франшизы */
+@media (max-width: 768px) {
+  .franchise-title {
+    font-size: 2rem;
+  }
+  
+  .franchise-subtitle {
+    font-size: 1.5rem;
+  }
+  
+  .franchise-btn {
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+  }
+  
+  .franchise-content {
+    padding: 1.5rem 0;
+  }
+}
+
+/* Стили кнопок теперь наследуются из глобальных стилей в index.css */
+
+
+
+
