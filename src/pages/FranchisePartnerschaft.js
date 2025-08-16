@@ -101,40 +101,6 @@ const FranchisePartnerschaft = () => {
           </div>
         </div>
       </div>
-
-      {/* Branding Section */}
-      <div className="branding-section">
-        <div className="container">
-          <div className="branding-content">
-            <div className="branding-star">★</div>
-            <h3>FREDDY FRESH</h3>
-            <h4>WÄHLE JETZT DEIN LIEFERGEBIET!</h4>
-          </div>
-        </div>
-      </div>
-
-      {/* Footer */}
-      <div className="franchise-footer">
-        <div className="container">
-          <div className="footer-content">
-            <div className="footer-links">
-              <a href="#">KONTAKT</a>
-              <span className="separator">•</span>
-              <a href="#">IMPRESSUM</a>
-              <span className="separator">•</span>
-              <a href="#">DATENSCHUTZ</a>
-              <span className="separator">•</span>
-              <a href="#">FRANCHISE</a>
-              <span className="separator">•</span>
-              <a href="#">ZUSATZSTOFFE & ALLERGENE</a>
-            </div>
-            <div className="footer-copyright">
-              <p>2025 FREDDY FRESH AG | HOME</p>
-            </div>
-            <div className="footer-star">★</div>
-          </div>
-        </div>
-      </div>
     </div>
   );
 };
