@@ -1,3 +1,4 @@
+// Order component - исправлены ESLint ошибки
 import React, { useState } from 'react';
 import axios from 'axios';
 import './Order.css';
