@@ -122,7 +122,8 @@ const Menu = () => {
     <div className="menu-page">
       <div className="menu-navigation">
         <div className="nav-container">
-          {categories.map((category) => (
+          {console.log('Categories:', categories)}
+          {categories && categories.length > 0 ? categories.map((category) => (
             <a
               key={category.id}
               href={`#${category.id}`}
@@ -134,7 +135,7 @@ const Menu = () => {
             >
               {category.name}
             </a>
-          ))}
+          )) : <div>No categories found</div>}
         </div>
       </div>
 

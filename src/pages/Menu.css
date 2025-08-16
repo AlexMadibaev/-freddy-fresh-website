@@ -28,38 +28,43 @@ h1 {
   top: 0;
   z-index: 100;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  display: block !important;
+  visibility: visible !important;
 }
 
 .nav-container {
   max-width: 100%;
   margin: 0 auto;
   padding: 0 1rem;
-  display: flex;
+  display: flex !important;
   justify-content: center;
-  gap: 1rem;
+  gap: 0.5rem;
   flex-wrap: wrap;
   align-items: center;
+  visibility: visible !important;
 }
 
 .nav-category {
   text-decoration: none;
   color: #333;
   font-weight: 700;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  padding: 0.5rem 0.8rem;
+  padding: 0.4rem 0.6rem;
   border-radius: 4px;
   transition: all 0.3s ease;
   cursor: pointer;
   background: white;
   border: 1px solid #e0e0e0;
-  display: inline-block;
-  min-width: 70px;
+  display: inline-block !important;
+  min-width: 60px;
   text-align: center;
-  margin: 2px;
+  margin: 1px;
   white-space: nowrap;
   scroll-behavior: smooth;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 .nav-category:hover {
@@ -315,13 +320,14 @@ h1 {
 
 @media (max-width: 768px) {
   .nav-container {
-    gap: 1rem;
-    padding: 0 1rem;
+    gap: 0.3rem;
+    padding: 0 0.5rem;
   }
   
   .nav-category {
-    font-size: 0.9rem;
-    padding: 0.4rem 0.8rem;
+    font-size: 0.75rem;
+    padding: 0.3rem 0.5rem;
+    min-width: 50px;
   }
 
   .filters-container {
