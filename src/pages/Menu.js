@@ -138,7 +138,9 @@ const Menu = () => {
           )) : <div>No categories found</div>}
         </div>
         
-        <div className="filters-container" style={{display: 'flex', justifyContent: 'center', gap: '10px', flexWrap: 'wrap', marginTop: '10px'}}>
+        <div className="nav-divider" style={{height: '1px', background: 'white', margin: '10px 0'}}></div>
+        
+        <div className="filters-container" style={{display: 'flex', justifyContent: 'center', gap: '10px', flexWrap: 'wrap'}}>
           {console.log('Filters:', filters)}
           {filters && filters.length > 0 ? filters.map((filter) => (
             <div key={filter.id} className={`filter-item ${filter.color}`} style={{display: 'flex', alignItems: 'center', gap: '5px', fontSize: '12px', padding: '5px 10px', background: 'white', border: '1px solid #e0e0e0', borderRadius: '3px'}}>
