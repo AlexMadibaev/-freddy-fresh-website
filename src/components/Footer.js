@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="footer-content">
           <div className="footer-brand">
             <div className="footer-logo">
-              <img src="/logo.png" alt="FREDDY FRESH" />
+              <img src="src/logo.png" alt="FREDDY FRESH" />
             </div>
           </div>
           <div className="footer-separator"></div>
