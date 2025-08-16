@@ -122,12 +122,13 @@ const Menu = () => {
     <div className="menu-page">
       <div className="menu-filters">
         <div className="filters-container">
-          {filters.map((filter) => (
+          {console.log('Filters:', filters)}
+          {filters && filters.length > 0 ? filters.map((filter) => (
             <div key={filter.id} className={`filter-item ${filter.color}`}>
               <span className="filter-icon">{filter.icon}</span>
               <span className="filter-text">{filter.name}</span>
             </div>
-          ))}
+          )) : <div>No filters found</div>}
         </div>
       </div>
 
