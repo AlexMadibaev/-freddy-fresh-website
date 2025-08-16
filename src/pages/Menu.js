@@ -120,15 +120,15 @@ const Menu = () => {
 
   return (
     <div className="menu-page">
-      <div className="menu-filters">
-        <div className="filters-container">
+      <div className="menu-filters" style={{display: 'block', visibility: 'visible', background: '#fafafa', padding: '10px', borderBottom: '1px solid #e0e0e0'}}>
+        <div className="filters-container" style={{display: 'flex', justifyContent: 'center', gap: '10px', flexWrap: 'wrap'}}>
           {console.log('Filters:', filters)}
           {filters && filters.length > 0 ? filters.map((filter) => (
-            <div key={filter.id} className={`filter-item ${filter.color}`}>
+            <div key={filter.id} className={`filter-item ${filter.color}`} style={{display: 'flex', alignItems: 'center', gap: '5px', fontSize: '12px', padding: '5px 10px', background: 'white', border: '1px solid #e0e0e0', borderRadius: '3px'}}>
               <span className="filter-icon">{filter.icon}</span>
               <span className="filter-text">{filter.name}</span>
             </div>
-          )) : <div>No filters found</div>}
+          )) : <div style={{color: 'red', padding: '10px'}}>No filters found - Array length: {filters ? filters.length : 'undefined'}</div>}
         </div>
       </div>
 
@@ -165,15 +165,17 @@ const Menu = () => {
                       <div className="info-icon">ℹ️</div>
                     </div>
                     {item.filters && item.filters.length > 0 && (
-                      <div className="product-filters">
+                      <div className="product-filters" style={{display: 'flex', gap: '5px', padding: '10px 20px', flexWrap: 'wrap'}}>
+                        {console.log('Item filters:', item.filters)}
                         {item.filters.map((filterId) => {
                           const filter = filters.find(f => f.id === filterId);
+                          console.log('Found filter:', filter, 'for id:', filterId);
                           return filter ? (
-                            <span key={filterId} className={`product-filter ${filter.color}`}>
+                            <span key={filterId} className={`product-filter ${filter.color}`} style={{display: 'flex', alignItems: 'center', gap: '3px', fontSize: '10px', padding: '3px 6px', background: filter.color === 'red' ? '#ffebee' : '#f5f5f5', border: '1px solid #e0e0e0', borderRadius: '2px'}}>
                               <span className="filter-icon">{filter.icon}</span>
                               <span className="filter-text">{filter.name}</span>
                             </span>
-                          ) : null;
+                          ) : <span key={filterId} style={{color: 'red'}}>Filter not found: {filterId}</span>;
                         })}
                       </div>
                     )}
