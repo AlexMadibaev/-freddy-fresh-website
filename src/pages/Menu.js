@@ -33,23 +33,23 @@ const Menu = () => {
 
   const menuItems = useMemo(() => ({
     aktion: [
-      { id: 1, name: 'AMERICAN MEATBALL', description: 'mit Käse-Sahne-Soße, karamellisierten Zwiebeln, Meatballs, Freddys Gouda-Mozzarella-Mix, Baconstreifen und frischer Zwiebellauch', price: 16.99, image: americanMeatball, discount: '20%' },
-      { id: 2, name: 'CRISPY CHICKEN', description: 'Knuspriges Hähnchen mit Salat, Tomate, Mayo', price: 9.99, image: crispyChicken, discount: '30%' },
+      { id: 1, name: 'AMERICAN MEATBALL', description: 'mit Käse-Sahne-Soße, karamellisierten Zwiebeln, Meatballs, Freddys Gouda-Mozzarella-Mix, Baconstreifen und frischer Zwiebellauch', price: 16.99, image: americanMeatball, discount: '20%', filters: ['new'] },
+      { id: 2, name: 'CRISPY CHICKEN', description: 'Knuspriges Hähnchen mit Salat, Tomate, Mayo', price: 9.99, image: crispyChicken, discount: '30%', filters: ['spicy'] },
       { id: 3, name: 'PALERMO', description: 'mit Pizzasoße, Salami, Freddys Gouda-Mozzarella-Mix', price: 12.99, image: palermo, discount: '25%' }
     ],
     pizza: [
-      { id: 4, name: 'AMERICAN MEATBALL', description: 'mit Käse-Sahne-Soße, karamellisierten Zwiebeln, Meatballs, Freddys Gouda-Mozzarella-Mix, Baconstreifen und frischer Zwiebellauch', price: 16.99, image: americanMeatball },
+      { id: 4, name: 'AMERICAN MEATBALL', description: 'mit Käse-Sahne-Soße, karamellisierten Zwiebeln, Meatballs, Freddys Gouda-Mozzarella-Mix, Baconstreifen und frischer Zwiebellauch', price: 16.99, image: americanMeatball, filters: ['new'] },
       { id: 5, name: 'PALERMO', description: 'mit Pizzasoße, Salami, Freddys Gouda-Mozzarella-Mix', price: 12.99, image: palermo },
       { id: 6, name: 'HAWAII', description: 'mit Pizzasoße, Schinken, Ananas, Freddys Gouda-Mozzarella-Mix', price: 13.99, image: americanMeatball },
-      { id: 7, name: 'MARGHERITA', description: 'mit Pizzasoße, Freddys Gouda-Mozzarella-Mix, Basilikum', price: 11.99, image: palermo },
-      { id: 8, name: 'FUNGHI', description: 'mit Pizzasoße, Champignons, Freddys Gouda-Mozzarella-Mix', price: 12.99, image: americanMeatball },
+      { id: 7, name: 'MARGHERITA', description: 'mit Pizzasoße, Freddys Gouda-Mozzarella-Mix, Basilikum', price: 11.99, image: palermo, filters: ['vegetarian'] },
+      { id: 8, name: 'FUNGHI', description: 'mit Pizzasoße, Champignons, Freddys Gouda-Mozzarella-Mix', price: 12.99, image: americanMeatball, filters: ['vegetarian'] },
       { id: 9, name: 'TONNO', description: 'mit Pizzasoße, Thunfisch, Zwiebeln, Freddys Gouda-Mozzarella-Mix', price: 13.99, image: palermo }
     ],
     burger: [
       { id: 10, name: 'CLASSIC BURGER', description: '100% Rindfleisch, Salat, Tomate, Zwiebeln, Käse', price: 9.99, image: crispyChicken },
       { id: 11, name: 'CHEESEBURGER', description: '100% Rindfleisch, Käse, Salat, Tomate, Zwiebeln', price: 10.99, image: crispyChicken },
       { id: 12, name: 'CHICKEN BURGER', description: 'Hähnchenbrust, Salat, Tomate, Mayo', price: 9.99, image: crispyChicken },
-      { id: 13, name: 'BBQ BURGER', description: '100% Rindfleisch, BBQ Sauce, Zwiebeln, Käse', price: 11.99, image: crispyChicken }
+      { id: 13, name: 'BBQ BURGER', description: '100% Rindfleisch, BBQ Sauce, Zwiebeln, Käse', price: 11.99, image: crispyChicken, filters: ['spicy'] }
     ],
     snacks: [
       { id: 14, name: 'POMMES FRITES', description: 'Knusprige Pommes mit Ketchup und Mayo', price: 4.99, image: roestisticks },
@@ -59,7 +59,7 @@ const Menu = () => {
     ],
     salate: [
       { id: 18, name: 'CAESAR SALAT', description: 'Salat mit Hähnchen, Croutons, Parmesan, Caesar Dressing', price: 9.99, image: salatBeachparty },
-      { id: 19, name: 'GEMISCHTER SALAT', description: 'Frischer Salat mit Tomaten, Gurken, Zwiebeln', price: 7.99, image: salatBeachparty },
+      { id: 19, name: 'GEMISCHTER SALAT', description: 'Frischer Salat mit Tomaten, Gurken, Zwiebeln', price: 7.99, image: salatBeachparty, filters: ['vegetarian'] },
       { id: 20, name: 'THUNFISCH SALAT', description: 'Salat mit Thunfisch, Eiern, Tomaten, Zwiebeln', price: 10.99, image: salatBeachparty }
     ],
     pasta: [
@@ -164,6 +164,19 @@ const Menu = () => {
                       <h3 className="product-name">{item.name}</h3>
                       <div className="info-icon">ℹ️</div>
                     </div>
+                    {item.filters && item.filters.length > 0 && (
+                      <div className="product-filters">
+                        {item.filters.map((filterId) => {
+                          const filter = filters.find(f => f.id === filterId);
+                          return filter ? (
+                            <span key={filterId} className={`product-filter ${filter.color}`}>
+                              <span className="filter-icon">{filter.icon}</span>
+                              <span className="filter-text">{filter.name}</span>
+                            </span>
+                          ) : null;
+                        })}
+                      </div>
+                    )}
                     <div className="product-image">
                       <img 
                         src={item.image} 
