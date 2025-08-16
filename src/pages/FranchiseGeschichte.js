@@ -62,7 +62,7 @@ const FranchiseGeschichte = () => {
               </div>
               
               <div className="brochure-link">
-                <a href="#" className="download-link">Franchisebroschüre downloaden</a>
+                <button className="download-link">Franchisebroschüre downloaden</button>
               </div>
             </div>
             
@@ -95,7 +95,7 @@ const FranchiseGeschichte = () => {
               </p>
               
               <div className="next-link">
-                <a href="#" className="weiter-link">WEITER &gt;</a>
+                <button className="weiter-link">WEITER &gt;</button>
               </div>
             </div>
           </div>

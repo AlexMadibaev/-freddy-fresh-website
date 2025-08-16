@@ -62,7 +62,7 @@ const FranchiseStores = () => {
               </div>
               
               <div className="brochure-link">
-                <a href="#" className="download-link">Franchisebroschüre downloaden</a>
+                <button className="download-link">Franchisebroschüre downloaden</button>
               </div>
             </div>
             
