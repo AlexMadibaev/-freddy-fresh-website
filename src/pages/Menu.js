@@ -120,18 +120,6 @@ const Menu = () => {
 
   return (
     <div className="menu-page">
-      <div className="menu-filters" style={{display: 'block', visibility: 'visible', background: '#fafafa', padding: '10px', borderBottom: '1px solid #e0e0e0'}}>
-        <div className="filters-container" style={{display: 'flex', justifyContent: 'center', gap: '10px', flexWrap: 'wrap'}}>
-          {console.log('Filters:', filters)}
-          {filters && filters.length > 0 ? filters.map((filter) => (
-            <div key={filter.id} className={`filter-item ${filter.color}`} style={{display: 'flex', alignItems: 'center', gap: '5px', fontSize: '12px', padding: '5px 10px', background: 'white', border: '1px solid #e0e0e0', borderRadius: '3px'}}>
-              <span className="filter-icon">{filter.icon}</span>
-              <span className="filter-text">{filter.name}</span>
-            </div>
-          )) : <div style={{color: 'red', padding: '10px'}}>No filters found - Array length: {filters ? filters.length : 'undefined'}</div>}
-        </div>
-      </div>
-
       <div className="menu-navigation">
         <div className="nav-container">
           {console.log('Categories:', categories)}
@@ -148,6 +136,16 @@ const Menu = () => {
               {category.name}
             </a>
           )) : <div>No categories found</div>}
+        </div>
+        
+        <div className="filters-container" style={{display: 'flex', justifyContent: 'center', gap: '10px', flexWrap: 'wrap', marginTop: '10px'}}>
+          {console.log('Filters:', filters)}
+          {filters && filters.length > 0 ? filters.map((filter) => (
+            <div key={filter.id} className={`filter-item ${filter.color}`} style={{display: 'flex', alignItems: 'center', gap: '5px', fontSize: '12px', padding: '5px 10px', background: 'white', border: '1px solid #e0e0e0', borderRadius: '3px'}}>
+              <span className="filter-icon">{filter.icon}</span>
+              <span className="filter-text">{filter.name}</span>
+            </div>
+          )) : <div style={{color: 'red', padding: '10px'}}>No filters found - Array length: {filters ? filters.length : 'undefined'}</div>}
         </div>
       </div>
       
