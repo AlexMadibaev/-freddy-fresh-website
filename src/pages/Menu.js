@@ -87,8 +87,8 @@ const Menu = () => {
     const element = document.getElementById(categoryId);
     
     if (element) {
-      // Прокручиваем к элементу с отступом для sticky навигации
-      const offsetTop = element.offsetTop - 100;
+      // Прокручиваем к элементу с отступом для sticky навигации и хедера
+      const offsetTop = element.offsetTop - 160;
       window.scrollTo({
         top: offsetTop,
         behavior: 'smooth'
@@ -100,7 +100,7 @@ const Menu = () => {
   useEffect(() => {
     const handleScroll = () => {
       const sections = categories.map(cat => document.getElementById(cat.id));
-      const scrollPosition = window.scrollY + 150; // Отступ для sticky навигации
+      const scrollPosition = window.scrollY + 200; // Отступ для sticky навигации и хедера
 
       sections.forEach((section, index) => {
         if (section) {
