@@ -126,8 +126,8 @@
 }
 
 .profile-svg {
-  width: 25px;
-  height: 25px;
+  width: 35px;
+  height: 35px;
   filter: brightness(0) invert(1); /* Делаем SVG белым */
   transition: all 0.3s ease;
 }
