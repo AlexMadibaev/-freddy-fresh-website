@@ -96,7 +96,7 @@ h1 {
   padding: 0 1rem;
   display: flex;
   justify-content: center;
-  gap: 2rem;
+  gap: 1rem;
   flex-wrap: wrap;
   align-items: center;
 }
@@ -104,11 +104,15 @@ h1 {
 .filter-item {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  font-size: 0.9rem;
+  gap: 0.3rem;
+  font-size: 0.8rem;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.3s ease;
+  padding: 0.2rem 0.5rem;
+  border-radius: 3px;
+  background: white;
+  border: 1px solid #e0e0e0;
 }
 
 .filter-item.red .filter-text {
@@ -331,12 +335,13 @@ h1 {
   }
 
   .filters-container {
-    gap: 1.5rem;
-    padding: 0 1rem;
+    gap: 0.5rem;
+    padding: 0 0.5rem;
   }
 
   .filter-item {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
+    padding: 0.15rem 0.4rem;
   }
 
   .section-title {
@@ -382,11 +387,13 @@ h1 {
   }
 
   .filters-container {
-    gap: 1rem;
+    gap: 0.3rem;
+    padding: 0 0.5rem;
   }
 
   .filter-item {
-    font-size: 0.75rem;
+    font-size: 0.65rem;
+    padding: 0.1rem 0.3rem;
   }
 
   .section-title {
