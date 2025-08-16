@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import './Header.css';
 import menuIcon from '../menu.svg';
 import logoIcon from '../logo.svg';
+import profileIcon from '../profile.svg';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -36,9 +37,7 @@ const Header = () => {
         {/* Правая часть - иконки */}
         <div className="header-actions">
           <button className="profile-icon">
-            <div className="profile-circle">
-              <div className="profile-silhouette"></div>
-            </div>
+            <img src={profileIcon} alt="Profile" className="profile-svg" />
           </button>
           <button className={`hamburger-menu ${isMenuOpen ? 'active' : ''}`} onClick={toggleMenu}>
             <span className="hamburger-line"></span>
