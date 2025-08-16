@@ -43,6 +43,7 @@ h1 {
   align-items: center;
   visibility: visible !important;
   margin-bottom: 0.5rem;
+  text-align: center;
 }
 
 .nav-category {

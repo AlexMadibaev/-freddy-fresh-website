@@ -140,10 +140,10 @@ const Menu = () => {
         
         <div className="nav-divider" style={{height: '1px', background: 'white', margin: '10px 0'}}></div>
         
-        <div className="filters-container" style={{display: 'flex', justifyContent: 'center', gap: '10px', flexWrap: 'wrap'}}>
+        <div className="filters-container" style={{display: 'flex', justifyContent: 'center', gap: '5px', flexWrap: 'wrap', maxWidth: '600px', margin: '0 auto'}}>
           {console.log('Filters:', filters)}
           {filters && filters.length > 0 ? filters.map((filter) => (
-            <div key={filter.id} className={`filter-item ${filter.color}`} style={{display: 'flex', alignItems: 'center', gap: '5px', fontSize: '12px', padding: '5px 10px', background: 'white', border: '1px solid #e0e0e0', borderRadius: '3px'}}>
+            <div key={filter.id} className={`filter-item ${filter.color}`} style={{display: 'flex', alignItems: 'center', gap: '3px', fontSize: '11px', padding: '3px 6px', background: 'transparent', border: 'none', borderRadius: '0'}}>
               <span className="filter-icon">{filter.icon}</span>
               <span className="filter-text">{filter.name}</span>
             </div>
