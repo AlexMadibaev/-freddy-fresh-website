@@ -120,6 +120,17 @@ const Menu = () => {
 
   return (
     <div className="menu-page">
+      <div className="menu-filters">
+        <div className="filters-container">
+          {filters.map((filter) => (
+            <div key={filter.id} className={`filter-item ${filter.color}`}>
+              <span className="filter-icon">{filter.icon}</span>
+              <span className="filter-text">{filter.name}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
       <div className="menu-navigation">
         <div className="nav-container">
           {console.log('Categories:', categories)}
@@ -136,17 +147,6 @@ const Menu = () => {
               {category.name}
             </a>
           )) : <div>No categories found</div>}
-        </div>
-      </div>
-
-      <div className="menu-filters">
-        <div className="filters-container">
-          {filters.map((filter) => (
-            <div key={filter.id} className={`filter-item ${filter.color}`}>
-              <span className="filter-icon">{filter.icon}</span>
-              <span className="filter-text">{filter.name}</span>
-            </div>
-          ))}
         </div>
       </div>
       
