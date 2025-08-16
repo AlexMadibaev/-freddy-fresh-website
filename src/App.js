@@ -13,6 +13,12 @@ import Aktion from './pages/Aktion';
 import Feedback from './pages/Feedback';
 import Jobs from './pages/Jobs';
 import Qualitaet from './pages/Qualitaet';
+import Franchise from './pages/Franchise';
+import FranchiseGeschichte from './pages/FranchiseGeschichte';
+import FranchiseKonditionen from './pages/FranchiseKonditionen';
+import FranchisePartnerschaft from './pages/FranchisePartnerschaft';
+import FranchiseDurchstarten from './pages/FranchiseDurchstarten';
+import FranchiseStores from './pages/FranchiseStores';
 import './App.css';
 
 function App() {
@@ -31,7 +37,13 @@ function App() {
             <Route path="/aktion" element={<Aktion />} />
             <Route path="/feedback" element={<Feedback />} />
             <Route path="/jobposting" element={<Jobs />} />
-        <Route path="/qualitaet" element={<Qualitaet />} />
+            <Route path="/qualitaet" element={<Qualitaet />} />
+            <Route path="/franchise" element={<Franchise />} />
+            <Route path="/franchise/geschichte" element={<FranchiseGeschichte />} />
+            <Route path="/franchise/konditionen" element={<FranchiseKonditionen />} />
+            <Route path="/franchise/partnerschaft" element={<FranchisePartnerschaft />} />
+            <Route path="/franchise/durchstarten" element={<FranchiseDurchstarten />} />
+            <Route path="/franchise/stores" element={<FranchiseStores />} />
           </Routes>
         </main>
         <Footer />

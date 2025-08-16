@@ -66,7 +66,7 @@ const Header = () => {
                   <li><Link to="/franchise/konditionen">Die Konditionen</Link></li>
                   <li><Link to="/franchise/partnerschaft">Die Partnerschaft</Link></li>
                   <li><Link to="/franchise/durchstarten">Jetzt Durchstarten</Link></li>
-                  <li><Link to="/stores">Stores</Link></li>
+                  <li><Link to="/franchise/stores">Stores</Link></li>
                 </ul>
               </li>
               <li><Link to="/qualitaet" className="mobile-nav-link">QUALITÄT</Link></li>
